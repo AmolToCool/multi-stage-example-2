@@ -7,4 +7,4 @@ RUN echo "Hello maven build finish!!!"
 
 FROM builder
 COPY --from=builder /app/source/*.jar /app/app.jar
-CMD[""java","-Djava.security.egd=file:/dev/./urandom", "-jar", "/app/app.jar"]
+CMD["java","-Djava.security.egd=file:/dev/./urandom", "-jar", "/app/app.jar"]
