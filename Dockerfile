@@ -1,2 +1,6 @@
 from openjdk:8-jdk-alpine
-run echo "Hello from open-jdk!!!"
+run mkdir -p /app/source
+copy . /app/source
+WORKDIR /app/source
+run ./mvnw clean package
+RUN echo "Hello maven build finish!!!"
